@@ -1,6 +1,5 @@
 package com.example.zzzz.architector.ui.contract;
 
-import com.example.zzzz.architector.bean.Bean;
 import com.example.zzzz.architector.ui.base.BaseContract;
 
 /**
@@ -9,7 +8,8 @@ import com.example.zzzz.architector.ui.base.BaseContract;
 
 public interface MainContract extends BaseContract.BasePresenter {
     interface MainView extends BaseContract.BaseView{
-        void loadData(Bean bean);
+        void loadData(String bean);
+        void loadString(String text);
     }
     interface MainPrensenter extends BaseContract.BasePresenter<MainView>{
         void getData();

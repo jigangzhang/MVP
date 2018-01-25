@@ -15,15 +15,15 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
     public T mPresenter;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(getViewLayout());
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayoutId());
         setPresenter();
         attachView();
     }
 
     //获取界面布局id
-    public abstract int getViewLayout();
+    public abstract int getLayoutId();
 
     //实例化Presenter
     public abstract void setPresenter();
