@@ -15,8 +15,9 @@ public interface BaseContract {
         void onLoadFail();
         void onNetError();
     }
+
     interface BasePresenter<T extends BaseView> {
-        void attachView(T view);
+        void attachView(T view);//在 Presenter 中对 View 进行管理， 绑定 销毁等
         void dettachView();
         void addSubscribe(Disposable disposable);
         //取消数据加载请求

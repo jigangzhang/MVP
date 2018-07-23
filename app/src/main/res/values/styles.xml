@@ -1,11 +1,46 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <!--启用 windowIsTranslucent=true 后，Animation.Activity失效， 改用Animation.Translucent-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi" tools:targetApi="m">true
+        </item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/activityAnim.normal</item>
+        <!--<item name="android:listDivider">@drawable/list_divider</item>-->
     </style>
 
+    <style name="startTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowBackground">@color/white</item>-->
+    </style>
+
+    <style name="activityAnim.normal" parent="@android:style/Animation.Activity">
+        <!--<item name="android:activityOpenEnterAnimation">@anim/anim_slide_enter_right</item>-->
+        <!--<item name="android:activityOpenExitAnimation">@anim/anim_slide_exit_left</item>-->
+        <!--<item name="android:activityCloseEnterAnimation">@anim/anim_slide_enter_left</item>-->
+        <!--<item name="android:activityCloseExitAnimation">@anim/anim_slide_exit_right</item>-->
+    </style>
+
+    <style name="activityAnim" parent="@android:style/Animation.Translucent">
+        <!--<item name="android:windowEnterAnimation">@anim/anim_slide_enter_right</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/anim_slide_exit_right</item>-->
+    </style>
+    <!--dialog 风格样式-->
+    <style name="dialog_common_style" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowBackground">@color/transparent</item>-->
+    </style>
+
+    <style name="dialog_bottom_style" parent="dialog_common_style">
+        <item name="android:windowFrame">@null</item>
+        <!--<item name="android:windowAnimationStyle">@style/timepopwindow_anim_style</item>-->
+    </style>
 </resources>

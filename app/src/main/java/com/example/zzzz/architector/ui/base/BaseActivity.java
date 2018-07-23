@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 /**
  * Created by Administrator on 2018/1/19.
@@ -11,7 +12,8 @@ import android.support.v7.app.AppCompatActivity;
  * T extends BasePresenter  两者有何区别吗
  */
 
-public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends AppCompatActivity implements BaseContract.BaseView {
+public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends AppCompatActivity implements IBase, BaseContract.BaseView {
+    private static String TAG = "BaseActivity";
     public T mPresenter;
 
     @Override
@@ -20,6 +22,8 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         setContentView(getLayoutId());
         setPresenter();
         attachView();
+        initPresenter();
+        onViewCreate(savedInstanceState);
     }
 
     //获取界面布局id
@@ -49,7 +53,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
 
     @Override
     public void onLoading() {
-
+        Log.e(TAG, "loading");
     }
 
     @Override
