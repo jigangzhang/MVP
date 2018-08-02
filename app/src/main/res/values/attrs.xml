@@ -40,4 +40,15 @@
         <attr name="scrollDuration" format="integer|reference" />
         <attr name="isAutoPlay" format="boolean|reference" />
     </declare-styleable>
+
+    <declare-styleable name="ArcLayout">
+        <attr name="arcHeight" format="dimension" />
+        <attr name="arcColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="FadeScrollView">
+        <attr name="fadeHeight" format="dimension" />
+        <attr name="fadeColor" format="color" />
+        <attr name="fadeView" format="integer" />
+    </declare-styleable>
 </resources>

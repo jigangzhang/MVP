@@ -24,6 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Scroller;
 
+import com.example.zzzz.architector.R;
+
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -186,7 +188,7 @@ public class BannerLayout extends RelativeLayout {
 
     }
 
-    //添加网络图片路径
+  /*  //添加网络图片路径
     public void setViewUrls(List<AdInfo> urls) {
         if (urls == null) {
             return;
@@ -211,7 +213,7 @@ public class BannerLayout extends RelativeLayout {
             }
         }
         setViews(views);
-    }
+    }*/
 
     @NonNull
     private ImageView getImageView(String url, final int position) {
@@ -241,7 +243,7 @@ public class BannerLayout extends RelativeLayout {
         indicatorContainer = new LinearLayout(getContext());
         indicatorContainer.setGravity(Gravity.CENTER);
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, dpToPx(20));
-        indicatorContainer.setBackgroundColor(getResources().getColor(R.color.advertiseBg));
+//        indicatorContainer.setBackgroundColor(getResources().getColor(R.color.advertiseBg));
         switch (indicatorPosition) {
             case centerBottom:
                 params.addRule(RelativeLayout.CENTER_HORIZONTAL);

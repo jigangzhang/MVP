@@ -6,6 +6,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
+import com.example.zzzz.architector.util.ScreenHelper;
+
 public class CliViewPager extends ViewPager {
     private int mTouchSlop;
     private float x;
@@ -20,7 +22,7 @@ public class CliViewPager extends ViewPager {
         super(context, attrs);
         ViewConfiguration configuration = ViewConfiguration.get(context);
         mTouchSlop = configuration.getScaledTouchSlop();
-        offset = ScreenHelper.dp2Px(getContext(), 50);
+        offset = ScreenHelper.dpToPx(getContext(), 50);
     }
 
     @Override

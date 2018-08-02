@@ -8,6 +8,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 
+import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
+import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+
 /**
  * <p>
  * Glide对图片做圆角处理,当ImageView使用CENTER_CROP属性时,使用此方法时无效果

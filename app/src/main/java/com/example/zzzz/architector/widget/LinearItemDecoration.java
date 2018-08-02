@@ -8,8 +8,11 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewCompat;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.example.zzzz.architector.util.ScreenHelper;
 
 
 /**
@@ -37,8 +40,8 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
         a.recycle();
-        mStartPx = ScreenHelper.dp2Px(context, dpStart);
-        mEndPx = ScreenHelper.dp2Px(context, dpEnd);
+        mStartPx = ScreenHelper.dpToPx(context, dpStart);
+        mEndPx = ScreenHelper.dpToPx(context, dpEnd);
         setOrientation(orientation);
     }
 
@@ -74,7 +77,6 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
         canvas.save();
         final int left;
         final int right;
-        Logger.t("divider");
         if (parent.getClipToPadding()) {
             left = parent.getPaddingLeft() + mStartPx;
             right = parent.getWidth() - parent.getPaddingRight() - mEndPx;
@@ -106,13 +108,13 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
         final int top;
         final int bottom;
         if (parent.getClipToPadding()) {
-            top = parent.getPaddingTop() + ScreenHelper.dp2Px(mContext, 10);
-            bottom = parent.getHeight() - parent.getPaddingBottom() - ScreenHelper.dp2Px(mContext, 10);
+            top = parent.getPaddingTop() + ScreenHelper.dpToPx(mContext, 10);
+            bottom = parent.getHeight() - parent.getPaddingBottom() - ScreenHelper.dpToPx(mContext, 10);
             canvas.clipRect(parent.getPaddingLeft(), top,
                     parent.getWidth() - parent.getPaddingRight(), bottom);
         } else {
-            top = parent.getHeight() + ScreenHelper.dp2Px(mContext, 10);
-            bottom = parent.getHeight() - ScreenHelper.dp2Px(mContext, 10);
+            top = parent.getHeight() + ScreenHelper.dpToPx(mContext, 10);
+            bottom = parent.getHeight() - ScreenHelper.dpToPx(mContext, 10);
         }
 
         final int childCount = parent.getChildCount();

@@ -8,12 +8,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.zzzz.architector.R;
+import com.example.zzzz.architector.util.ScreenHelper;
 
 //ViewPager 转换 特殊效果
 public class CarPageTransformer implements ViewPager.PageTransformer {
     @Override
     public void transformPage(View page, float position) {
-        ImageView img = page.findViewById(R.id.item_car_img);
+       /* ImageView img = page.findViewById(R.id.item_car_img);
         TextView name = page.findViewById(R.id.item_car_name);
         LinearLayout.LayoutParams nameParams = new LinearLayout.LayoutParams(name.getLayoutParams());
         LinearLayout.LayoutParams carParams = new LinearLayout.LayoutParams(img.getLayoutParams());
@@ -62,6 +63,6 @@ public class CarPageTransformer implements ViewPager.PageTransformer {
                         margin, carParams.bottomMargin);
                 img.setLayoutParams(carParams);
             }
-        }
+        }*/
     }
 }
